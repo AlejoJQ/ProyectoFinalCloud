@@ -1,0 +1,12 @@
+E:\UTN\6to\Cloud computing\Disquera.UAPI\bin\Debug\net6.0\Disquera.UAPI.deps.json
+E:\UTN\6to\Cloud computing\Disquera.UAPI\bin\Debug\net6.0\Disquera.UAPI.dll
+E:\UTN\6to\Cloud computing\Disquera.UAPI\bin\Debug\net6.0\Disquera.UAPI.pdb
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\Disquera.UAPI.csproj.AssemblyReference.cache
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\Disquera.UAPI.GeneratedMSBuildEditorConfig.editorconfig
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\Disquera.UAPI.AssemblyInfoInputs.cache
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\Disquera.UAPI.AssemblyInfo.cs
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\Disquera.UAPI.csproj.CoreCompileInputs.cache
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\Disquera.UAPI.dll
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\refint\Disquera.UAPI.dll
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\Disquera.UAPI.pdb
+E:\UTN\6to\Cloud computing\Disquera.UAPI\obj\Debug\net6.0\ref\Disquera.UAPI.dll

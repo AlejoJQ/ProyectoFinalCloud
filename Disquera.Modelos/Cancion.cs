@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,10 @@ namespace Disquera.Modelos
         public String? reproducciones { get; set; }
         public String? genero { get; set; }
 
-        //Claves foraneas        
+        //Claves foraneas
+        [ForeignKey("Autorid_autor")] 
         public Autor? Autor { get; set; }
-        public int Autorid_autor { get; set; } //Clave Foranea
+        public int? Autorid_autor { get; set; } //Clave Foranea
 
     }
 }

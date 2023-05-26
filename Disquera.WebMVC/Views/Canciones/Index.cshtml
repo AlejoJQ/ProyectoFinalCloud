@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Disquera.Modelos.Cancion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id_cancion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reproducciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.genero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autorid_autor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_cancion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.reproducciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.genero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autorid_autor)               
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id_cancion = item.id_cancion }) |
+                    @Html.ActionLink("Details", "Details", new { id_cancion = item.id_cancion }) |
+                    @Html.ActionLink("Delete", "Delete", new { id_cancion = item.id_cancion })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

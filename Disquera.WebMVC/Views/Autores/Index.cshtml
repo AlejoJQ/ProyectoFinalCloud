@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Disquera.Modelos.Autor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id_autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nacionalidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.edad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nacionalidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id_autor = item.id_autor }) |
+                @Html.ActionLink("Details", "Details", new { id_autor = item.id_autor }) |
+                @Html.ActionLink("Delete", "Delete", new { id_autor = item.id_autor })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

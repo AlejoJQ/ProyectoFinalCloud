@@ -40,6 +40,7 @@ namespace Disquera.UAPI
                 throw new Exception("Ha sucedido un error inesperado (" + ex.Message + ")");
             }
         }
+
         public void Update(string Url, string id, T data)
         {
             try

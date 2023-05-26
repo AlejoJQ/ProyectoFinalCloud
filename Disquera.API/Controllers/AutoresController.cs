@@ -22,41 +22,14 @@ namespace Disquera.API.Controllers
 
         // GET: api/Autores
         [HttpGet]
-
-        /*public async Task<ActionResult<IEnumerable<Autor>>> GetAutor()
-        {
-          if (_context.Autores == null)
-          {
-              return NotFound();
-          }
-            return await _context.Autores.Include(a => a.Canciones).ToListAsync();
-        }*/
         public async Task<ActionResult<IEnumerable<Autor>>> GetAutor()
         {
-            var autores = await _context.Autores
-                .Include(a => a.Canciones)
-                .Select(a => new
-                {
-                    a.id_autor,
-                    a.nombre,
-                    a.nacionalidad,
-                    a.edad,
-                    Canciones = a.Canciones.Select(c => new
-                    {
-                        c.id_cancion,
-                        c.nombre,
-                        c.reproducciones,
-                        c.genero
-                    })
-                })
-                .ToListAsync();
-
-            if (autores == null)
+            if (_context.Autores == null)
             {
                 return NotFound();
             }
 
-            return Ok(autores);
+            return await _context.Autores.Include(c => c.Canciones).ToListAsync();
         }
 
         // GET: api/Autores/5

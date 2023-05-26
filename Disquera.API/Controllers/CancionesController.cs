@@ -22,45 +22,27 @@ namespace Disquera.API.Controllers
 
         // GET: api/Canciones
         [HttpGet]
-        /*public async Task<ActionResult<IEnumerable<Cancion>>> GetCancion()
+        public async Task<ActionResult<IEnumerable<Cancion>>> GetCancion()
         {
           if (_context.Canciones == null)
           {
               return NotFound();
           }
             return await _context.Canciones.Include(a => a.Autor).ToListAsync();
-        }*/
-        public async Task<ActionResult<IEnumerable<Cancion>>> GetCancion()
-        {
-            var canciones = await _context.Canciones
-                .Include(c => c.Autor)
-                .Select(c => new
-                {
-                    c.id_cancion,
-                    c.nombre,
-                    c.reproducciones,
-                    id_autor = c.Autor.id_autor,
-                    c.genero
-                })
-                .ToListAsync();
-
-            if (_context.Canciones == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(canciones);
         }
-
+ 
         // GET: api/Canciones/5
         [HttpGet("{id}")]
-        /*public async Task<ActionResult<Cancion>> GetCancion(int id)
+        public async Task<ActionResult<Cancion>> GetCancion(int id)
         {
           if (_context.Canciones == null)
           {
               return NotFound();
           }
-            var cancion = await _context.Canciones.FindAsync(id);
+            var cancion = await _context
+                .Canciones
+                .Include(a => a.Autor)
+                .FirstOrDefaultAsync(a => a.id_cancion == id);              
 
             if (cancion == null)
             {
@@ -68,31 +50,6 @@ namespace Disquera.API.Controllers
             }
 
             return cancion;
-        }*/
-        public async Task<ActionResult<Cancion>> GetCancion(int id)
-        {
-            if (_context.Canciones == null)
-            {
-                return NotFound();
-            }
-
-            var cancion = await _context.Canciones
-                .Select(c => new
-                {
-                    c.id_cancion,
-                    c.nombre,
-                    c.reproducciones,
-                    c.genero,
-                    id_autor = c.Autor.id_autor
-                })
-                .FirstOrDefaultAsync(c => c.id_cancion == id);
-
-            if (cancion == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(cancion);
         }
 
         // PUT: api/Canciones/5

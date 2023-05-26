@@ -15,4 +15,6 @@ using Disquera.Modelos;
         public DbSet<Disquera.Modelos.Cancion> Canciones { get; set; } = default!;
 
         public DbSet<Disquera.Modelos.Autor>? Autores { get; set; }
-    }
+
+}
+
